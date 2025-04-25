@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Up Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="title">ZAXCSTORE</div>
+  </header>
+
+  <section class="hero">
+    <h1>Form Top Up</h1>
+    <p>Masukkan detail akun dan pilih nominal</p>
+  </section>
+  <h2 id="judul-game">Top Up Game</h2>
+
+<script>
+  const game = new URLSearchParams(window.location.search).get('game');
+  const judul = document.getElementById("judul-game");
+
+  switch (game) {
+    case 'mlbb':
+      judul.innerText = "Top Up Mobile Legends";
+      break;
+    case 'ff':
+      judul.innerText = "Top Up Free Fire";
+      break;
+    case 'pubg':
+      judul.innerText = "Top Up PUBG Mobile";
+      break;
+    case 'roblox':
+      judul.innerText = "Top Up Roblox";
+      break;
+    default:
+      judul.innerText = "Top Up Game";
+  }
+</script>
+
+  <section class="produk-list">
+    <form action="#" method="POST" class="form-topup">
+      <label for="game-id">ID Pengguna / UID:</label>
+      <input type="text" id="game-id" name="game-id" required placeholder="Masukkan ID kamu">
+
+      <label for="zone-id">Server / Zone ID (jika ada):</label>
+      <input type="text" id="zone-id" name="zone-id" placeholder="Contoh: 1234 (opsional)">
+
+      <label for="nominal">Pilih Nominal:</label>
+      <select id="nominal" name="nominal" required>
+        <option value="">-- Pilih --</option>
+        <option value="10">10 Diamond - Rp3.000</option>
+        <option value="50">50 Diamond - Rp15.000</option>
+        <option value="100">100 Diamond - Rp28.000</option>
+      </select>
+
+      <label for="metode">Metode Pembayaran:</label>
+      <select id="metode" name="metode" required>
+        <option value="">-- Pilih --</option>
+        <option value="dana">DANA</option>
+        <option value="ovo">OVO</option>
+        <option value="gopay">GoPay</option>
+        <option value="qris">QRIS</option>
+      </select>
+
+      <button type="submit" class="btn">Bayar Sekarang</button>
+    </form>
+  </section>
+</body>
+</html>

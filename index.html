@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Top Up Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<div class="sidebar" id="sidebar">
+  <ul>
+    <li><a href="riwayat.html">Riwayat Transaksi</a></li>
+    <li><a href="https://wa.me/6281234567890" target="_blank">Contact Service</a></li>
+  </ul>
+</div>
+  <div class="fallback-bg"></div>
+
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="image/bg.mp4" type="video/mp4" />
+  </video>
+<body><header class="header-flex">
+  <div class="title">
+    <img src="image/logo.png" alt="ZAXC STORE" />
+  </div>
+  <div class="search-box">
+    <input type="search" class="input-search" placeholder="Cari game atau produk...">
+    <button type="submit" class="input-submit">CARI</button>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Top Up Game Favoritmu!</h1>
+  <p>Cepat, aman, dan terpercaya</p>
+</section>
+<div class="slider-outside">
+  <div class="carousel-track">
+    <img src="image/slide1.jpg" class="carousel-img" alt="Slide 1">
+    <img src="image/slide2.jpg" class="carousel-img" alt="Slide 2">
+  </div>
+</div>
+
+
+<section class="produk-populer">
+  <div class="container">
+    <h2>Game Populer</h2>
+    <div class="produk-grid">
+      <a href="topup.html?game=mlbb" class="produk-item" data-name="mobile legends">
+        <img src="image/mlbb.png" alt="Mobile Legends">
+        <span>Mobile Legends</span>
+      </a>
+      <a href="topup.html?game=ff" class="produk-item" data-name="free fire">
+        <img src="image/ff.png" alt="Free Fire">
+        <span>Free Fire</span>
+      </a>
+      <a href="topup.html?game=pubg" class="produk-item" data-name="pubg mobile">
+        <img src="image/pubg.png" alt="PUBG Mobile">
+        <span>PUBG Mobile</span>
+      </a>
+      <a href="topup.html?game=roblox" class="produk-item" data-name="roblox">
+        <img src="image/roblox.png" alt="Roblox">
+        <span>Roblox</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="produk-lainnya">
+  <div class="container">
+    <h2>Game Lainnya</h2>
+    <div class="produk-grid">
+      <a href="topup.html?game=genshin" class="produk-item" data-name="genshin impact">
+        <img src="image/genshin.png" alt="Genshin Impact">
+        <span>Genshin Impact</span>
+      </a>
+      <a href="topup.html?game=valorant" class="produk-item" data-name="valorant">
+        <img src="image/valorant.png" alt="Valorant">
+        <span>Valorant</span>
+      </a>
+
+    </div>
+  </div>
+
+<section class="artikel">
+    <h2>Artikel Terbaru</h2>
+    <div class="artikel-list">
+      <article class="artikel-item">
+        <h3>Waspada Website Clone: Kenali Perbedaan Antara Website Asli dan Palsu</h3>
+        <p>Website clone semakin marak. Pelajari cara membedakan website asli dengan yang palsu agar data dan transaksi Anda tetap aman.</p>
+      </article>
+
+      <article class="artikel-item">
+        <h3>Keamanan Online: Tips untuk Menjaga Akun dan Data Anda</h3>
+        <p>Jaga keamanan akun Anda dengan tips praktis agar data pribadi tetap aman dari ancaman di dunia maya.</p>
+      </article>
+
+      <article class="artikel-item">
+        <h3>Penipuan Online: Ciri-ciri dan Cara Menghindarinya</h3>
+        <p>Kenali tanda-tanda penipuan online dan cara melindungi diri dari modus-modus yang sering digunakan pelaku penipuan.</p>
+      </article>
+
+      <article class="artikel-item">
+        <h3>Protokol Keamanan dalam Transaksi Online</h3>
+        <p>Ikuti protokol keamanan saat bertransaksi online agar pembayaran dan data pribadi Anda tetap aman.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+</section>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const sidebar = document.getElementById('sidebar');
+  const searchInput = document.querySelector('.input-search');
+  const produkItems = document.querySelectorAll('.produk-item');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    sidebar.classList.toggle('active');
+  });
+
+  searchInput.addEventListener('input', function() {
+    const searchQuery = searchInput.value.toLowerCase();
+    
+    produkItems.forEach(item => {
+      const productName = item.getAttribute('data-name').toLowerCase();
+      if (productName.includes(searchQuery)) {
+        item.style.display = 'block'; 
+      } else {
+        item.style.display = 'none'; 
+      }
+    });
+  });
+</script>
+</body>
+</html>
